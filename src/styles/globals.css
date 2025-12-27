@@ -1,0 +1,89 @@
+@import 'tailwindcss/preflight';
+@tailwind utilities;
+
+@import 'tailwindcss';
+/* Note: You may need to change the path to fit your project structure */
+
+@config "../../tailwind.config.js";
+
+@layer base {
+  :root {
+    --color-amber-50: #fffbeb;
+    --color-amber-500: #f59e0b;
+    --color-orange-600: #ea580c;
+  }
+
+  .dark {
+    --color-stone-900: #1c1917;
+    --color-amber-200: #fde68a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Mejoras de accesibilidad */
+  .focus-visible:focus-visible {
+    outline: 2px solid var(--color-amber-500);
+    outline-offset: 2px;
+  }
+
+  /* Mejora de contraste para textos */
+  .text-contrast {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@layer components {
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 200% auto;
+    animation: gradient 3s ease infinite;
+  }
+
+  .scroll-mt-80 {
+    scroll-margin-top: 80px;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Soporte para reduce-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .motion-reduce\:animate-none {
+      animation: none !important;
+    }
+    
+    .motion-reduce\:transition-none {
+      transition: none !important;
+    }
+  }
+}

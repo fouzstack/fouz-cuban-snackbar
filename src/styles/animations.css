@@ -1,0 +1,43 @@
+@keyframes culinaryGradient {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes spiceGlow {
+  0%, 100% { 
+    opacity: 0.3; 
+  }
+  50% { 
+    opacity: 0.7; 
+  }
+}
+
+/* Optimizaciones de rendimiento */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Mejoras de rendimiento para móviles */
+@media (max-width: 768px) {
+  .mobile-optimize {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
