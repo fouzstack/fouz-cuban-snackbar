@@ -13,7 +13,7 @@ import {
   CubanFlagIcon
 } from '../icons/CustomIcons';
 import { setMetaTags } from '../../utils/seo';
-import heroImage from '../../assets/hero-cuban-restaurant.jpg'; // Importa la imagen
+
 
 interface HeroProps {
   theme: 'light' | 'dark';
@@ -23,7 +23,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ theme, reducedMotion, onExplore }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-
+  const heroImage = '/hero-cuban-restaurant.jpg'; 
   // Configurar meta tags específicos para la página principal
   useEffect(() => {
     setMetaTags({
